@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'directories/css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'directories/css/first_pane.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'directories/css/second_pane.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'directories/css/third_pane.css' %}">
+        <link rel="stylesheet" href={% static 'directories/Navigation.css' %}>
+        <title>COVID-19 Dashboard</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="title">
+                <h1>COVID-19 Patient Projections and Simulation</h1>
+            </div>
+
+            <main id="app">
+                {% block content %}{% endblock content %}
+            </main>
+
+            <div class="sidebar__container">
+                <div class="sidebar__pane">
+                    <div class="menu-btn" onclick="SlideMenu()">
+                        <div class="menu-btn_burger"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar__menu" id="menu">
+                    <div class="sidebar__menu__container">
+                        <div class="sidebar-logo">
+                            <a href="{% url 'covid-home' %}" class="sidebar-btn">
+                                <img src="{% static 'directories/images/Virus.png' %}">
+                                <span class="sidebar__link__text">DSS</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-logo">
+                            <a href="{% url 'covid-simulation' %}" class="sidebar-btn">
+                                <img src="{% static 'directories/images/Data.png' %}">
+                                <span class="sidebar__link__text">Simulation</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-logo">
+                            <a href="{% url 'covid-database' %}" class="sidebar-btn">
+                                <img src="{% static 'directories/images/Database.png' %}">
+                                <span class="sidebar__link__text">Database</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src={% static 'directories/Navigation.js' %}></script>  
+    <script src={% static 'directories/Sidebar_Animation.js' %}></script>
+    <script src={% static 'directories/inputFile.js' %}></script>
+    </body>
+</html>

@@ -1,0 +1,162 @@
+@font-face {
+    font-family: OpenSans;
+    src: url("./fonts/OpenSans-Regular.ttf");
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #c5afafc5;
+    border-radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #2e2e2e;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box !important;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 120px 1fr;
+    grid-template-areas: 
+        "sidebar title"
+        "sidebar main";
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    color: white;
+}
+
+/** --- Main --- **/
+main {
+    grid-area: main;
+    overflow-y: hidden;
+    margin: 0 50px 50px 50px;
+}
+
+/** --- Side Bar --- **/
+.sidebar__container {
+    display: flex;
+    grid-area: sidebar;
+    overflow: hidden;
+}
+
+.sidebar__pane {
+    width: 120px;
+    height: 100%;
+    background: black;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar__menu {
+    background-color: #48addf;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    position: fixed;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 120px;
+    transition: 0.7s;
+}
+
+.open {
+    width: 25rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar__menu__container {
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-logo {
+    margin-left: 60.5px;
+    margin-right: 60.5px;
+    padding: 20px;
+    transition: 0.3s;
+    user-select: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.sidebar-logo.fade {
+    opacity: 1;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.2);
+}
+
+.sidebar-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+}
+
+.sidebar__link__text {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: white;
+}
+
+@media only screen and (max-width: 1680px) {
+    .container {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: 80px 1fr;
+    }
+    
+    main {
+        margin: 0 25px 25px 25px;
+    }
+}
+
+@media only screen and (max-width: 1415px) {
+    .container {
+        grid-template-columns: 80px 1fr;
+        grid-template-rows: 80px 1fr;
+    }
+
+    main {
+        margin: 0 25px 25px 25px;
+    }
+
+    .title {
+        padding-left: 25px;
+    }
+
+    .sidebar__pane {
+        width: 85px;
+    }
+
+    .sidebar__menu {
+        left: 80px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .title h1{
+        font-size: 25px;
+    }
+}

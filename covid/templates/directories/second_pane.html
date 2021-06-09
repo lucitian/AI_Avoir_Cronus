@@ -1,0 +1,66 @@
+{% extends 'directories/base.html' %}
+{% block content %}
+    <div class="simulation__container">
+        <div class="simulation__input__box">
+            <div class="simulation__input__field">
+                <div class="s__title">
+                    <h2>Input data</h2>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="s__input">
+                        <label for="transmission_rate">Transmission Rate: </label>
+                        <input class="s__input__field" type="text" name="transmission_rate" width="240" value={{ transmission }}></input>
+                    </div>
+                    <div class="s__input">
+                        <label for="recovery_rate">Recovery Rate: </label>
+                        <input class="s__input__field" type="text" name="recovery_rate" value={{ recovery }}></input>
+                    </div>
+                    <div class="s__input">
+                        <label for="population">Population: </label>
+                        <input class="s__input__field" type="text" name="population" value={{ pop }}></input>
+                    </div>
+                    <div class="s__input">
+                        <label for="infected">Infected: </label>
+                        <input class="s__input__field" type="text" name="infected" value={{ inf }}></input>
+                    </div>
+                    <div class="s__input">
+                        <label for="recovered">Recovered: </label>
+                        <input class="s__input__field" type="text" name="recovered" value={{ recovered }}></input>
+                    </div>
+                    <div class="s__input">
+                        <label for="time_step">Time step: </label>
+                        <input class="s__input__field" type="text" name="time_step" value={{ dt }}></input>
+                    </div>
+                    <div class="s__input">
+                        <label for="duration">Duration: </label>
+                        <input class="s__input__field" type="text" name="duration" value={{ dur }}></input>
+                    </div>
+                    
+                    <div class="s__buttons">
+                        <input class="s__buttons__submit" type="submit" value="Simulate">
+                        <input class="s__buttons__reset" type="submit" value="Clear">
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+
+        <div class="simulation__box">
+            <div class="simulation__box__field">
+                <div class="graph__top__field">
+
+                    <div class="graph_top1">
+                        <div class="graph_top1__content">
+                        {% if graph %}
+                            {{ graph|safe }}
+                        {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+
+        
+    </div>
+{% endblock content%}

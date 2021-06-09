@@ -1,0 +1,66 @@
+{% extends 'directories/base.html' %}
+{% block content %}
+    <div class="db__container">
+        <div class="db__box">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="db__buttons">
+                    <div id="yourBtn" class="db__buttons__choose" onclick="getFile()">Choose model file</div>
+                    <div>
+                        <input id="upfile" type="file"name="myfile"  value="upload" onchange="sub(this)"></input>
+                    </div>
+                    <input class="db__buttons__submit" type="submit" value="Submit">
+                </div>
+            </form>
+            <div class="db__table">
+                <table>
+                    <thead>
+                        <tr class="row__head">
+                            <th class="db__header__cell">Sex</th>
+                            <th class="db__header__cell">Patient Type</th>
+                            <th class="db__header__cell">Intubed</th>
+                            <th class="db__header__cell">Pneumonia</th>
+                            <th class="db__header__cell">Age</th>
+                            <th class="db__header__cell">Pregnancy</th>
+                            <th class="db__header__cell">Diabetes</th>
+                            <th class="db__header__cell">COPD</th>
+                            <th class="db__header__cell">Asthma</th>
+                            <th class="db__header__cell">Immuno Suppressed</th>
+                            <th class="db__header__cell">Hypertension</th>
+                            <th class="db__header__cell">Other Diseases</th>
+                            <th class="db__header__cell">Cardiovascular</th>
+                            <th class="db__header__cell">Obesity</th>
+                            <th class="db__header__cell">Renal Chronic</th>
+                            <th class="db__header__cell">Tobacco</th>
+                            <th class="db__header__cell">Contact</th>
+                            <th class="db__header__cell">Covid Res</th>
+                            <!--
+                            <th class="db__header__cell">ICU</th>
+                            -->
+                        </tr>
+                    </thead>
+                    <tbody id="try">
+                        {% for row in data %}
+                            <tr class="row__body">
+                                {% for d in row %}
+                                    <td class="db__data__cell">{{d}}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="db__metrics__box">
+            <div class="db__metrics__graph1">
+                <div class="db__graph__content">
+                    {% if graph %}
+                        {{ graph|safe }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

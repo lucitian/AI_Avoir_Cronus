@@ -1,0 +1,149 @@
+/** --- Third Pane --- **/
+.db__container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 0.4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "db__box db__metrics";
+    gap: 10px;
+}
+
+.db__box {
+    grid-area: db__box;
+    background-color:white;
+    border-radius: 10px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.05fr 1fr;
+    grid-template-areas: 
+        "submitpane"
+        "tablepane";
+    overflow-x: auto;
+}
+
+.db__buttons {
+    grid-area: submitpane;
+    display: flex;
+    align-items: center;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+.db__buttons__choose {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #48addf;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: 0.2s ease;
+    margin-right: 100px;
+}
+
+.db__buttons__choose:hover {
+    background-color:  #2182b3;
+}
+
+.db__buttons__submit {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #48addf;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.db__buttons__submit:hover {
+    background-color:  #2182b3;
+}
+
+.db__table {
+    grid-area: tablepane;
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow: auto;
+}
+
+.db__table table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.row__head {
+    background-color: #247ca8;
+}
+
+.db__header__cell {
+    color: white;
+    width: 500px;
+    height: 50px;
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+.row__body {
+    background: #fff;
+}
+
+.row__body:nth-child(even) {
+    background: rgb(223, 214, 214);
+}
+
+.db__data__cell {
+    height: 50px;
+}
+
+th, td {
+    font-family: OpenSans;
+    padding-left: 15px;
+}
+
+table, th, td {
+    text-align: left;
+}
+
+
+.db__metrics__box {
+    grid-area: db__metrics;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "db__metrics__graph1"
+        "db__metrics__graph2";
+    gap: 10px;
+}
+
+.db__metrics__graph1 {
+    grid-area: db__metrics__graph1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.db__metrics__graph2 {
+    grid-area: db__metrics__graph2;
+    background-color: white;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.db__graph__content {
+    width: 100%;
+    height: 100%;
+    background: white;
+}

@@ -1,0 +1,168 @@
+/** --- Second Pane --- **/
+.simulation__container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "input-box simulation-box";
+    gap: 10px;
+}
+
+.simulation__input__box {
+    grid-area: input-box;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.simulation__input__field {
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.s__title {
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 445px;
+}
+
+.s__title h2 { 
+    font-size: 30px;
+    font-weight: bold;
+    font-family: OpenSans;
+}
+
+/** Input field **/
+.s__input {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 445px;
+}
+
+.s__input label {
+    display: inline-block;
+    width: 240px;
+    font-size: 20px;
+}
+
+.s__input__field {
+    line-height: 50px;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fafafa;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.s__buttons {
+    display: flex;
+    max-width: 445px;
+    gap:10px;
+}
+
+.s__buttons__submit {
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #48addf;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.s__buttons__submit:hover {
+    background-color:  #2182b3;
+}
+
+.s__buttons__reset {
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: #48addf;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.s__buttons__reset:hover {
+    background-color:  #2182b3;
+}
+
+/** Simulation Box **/
+.simulation__box {
+    grid-area: simulation-box;
+    max-width: 100%;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.simulation__box__field {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "full_graph";
+}
+
+.graph__top__field {
+    grid-area: full_graph;
+    border-radius: 10px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "graph_top1";
+    gap: 10px;
+}
+
+.graph_top1 {
+    grid-area: graph_top1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.graph_top1__content {
+    background: rgb(240, 218, 218);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1680px) {
+    .simulation__input__field {
+        padding: 25px;
+    }
+
+    .s__title h2 {
+        font-size: 25px;
+    }
+
+    .s__input label {
+        width: 200px;
+        font-size: 18px;
+    }
+}

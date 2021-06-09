@@ -1,0 +1,223 @@
+{% extends 'directories/base.html' %}
+{% block content %}
+    <div class="dss__container">
+        <div class="dss__input__box" >
+            <div class="dss__input__box-field">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="ds__title">
+                        <h2>Personal data</h2>
+                    </div>
+
+                    <div class="ds__input">
+                        <label for="age">Age: </label>
+                        <input class="ds__input__field" type="text" name="age" width="240"></input>
+                    </div>
+                    
+                    <div class="ds__radio">
+                        <label for="sex">Sex: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="male" name="sex" value="male">
+                            <label for="male">Male</label><br>
+                            <input class="ds__radio__field" type="radio" id="female" name="sex" value="female">
+                            <label for="female">Female</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="patient_type">Patient Type: </label>
+                        <div class="ds__radio__box" id="patient-type">
+                            <input class="ds__radio__field" type="radio" id="outpatient" name="patient_type" value="outpatient">
+                            <label for="outpatient">Outpatient</label><br>
+                            <input class="ds__radio__field" type="radio" id="inpatient" name="patient_type" value="inpatient">
+                            <label for="inpatient">Inpatient</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__title">
+                        <h2>Status</h2>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="pneumonia">Pneumonia: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="pneumonia" value="yes">
+                            <label for="pneumonia">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="pneumonia" value="no">
+                            <label for="pneumonia">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="pregnancy">Pregnancy: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="pregnancy" value="yes">
+                            <label for="pregnancy">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="pregnancy" value="no">
+                            <label for="pregnancy">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="diabetes">Diabetes: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="diabetes" value="yes">
+                            <label for="diabetes">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="diabetes" value="no">
+                            <label for="diabetes">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="copd">COPD: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="copd" value="yes">
+                            <label for="copd">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="copd" value="no">
+                            <label for="copd">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="asthma">Asthma: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="asthma" value="yes">
+                            <label for="asthma">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="asthma" value="no">
+                            <label for="asthma">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="imsupr">Imsupr: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="imsupr" value="yes">
+                            <label for="imsupr">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="imsupr" value="no">
+                            <label for="imsupr">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="hypertension">Hypertension: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="hypertension" value="yes">
+                            <label for="hypertension">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="hypertension" value="no">
+                            <label for="hypertension">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="other_diseases">Other Diseases: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="other_diseases" value="yes">
+                            <label for="other_diseases">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="other_diseases" value="no">
+                            <label for="other">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="cardiovascular">Cardiovascular: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="cardiovascular" value="yes">
+                            <label for="cardiovascular">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="cardiovascular" value="no">
+                            <label for="cardiovascular">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="obesity">Obesity: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="obesity" value="yes">
+                            <label for="obesity">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="obesity" value="no">
+                            <label for="obesity">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="renal_chronic">Renal Chronic: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="renal_chronic" value="yes">
+                            <label for="renal_chronic">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="renal_chronic" value="no">
+                            <label for="renal_chronic">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="tobacco">Tobacco: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="tobacco" value="yes">
+                            <label for="tobacco">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="tobacco" value="no">
+                            <label for="tobacco">No</label><br>
+                        </div>
+                    </div>
+
+                    <div class="ds__radio">
+                        <label for="other_contact">Other Contact: </label>
+                        <div class="ds__radio__box">
+                            <input class="ds__radio__field" type="radio" id="yes" name="other_contact" value="yes">
+                            <label for="other_contact">Yes</label><br>
+                            <input class="ds__radio__field" type="radio" id="No" name="other_contact" value="no">
+                            <label for="other_contact">No</label><br>
+                        </div>
+                    </div>
+                    <input class="dss__buttons__submit" type="submit" value="Diagnose">
+                </form>
+
+            </div>
+        </div>
+        
+        <div class="dss__result__box">
+            <div class="dss__result__box-field">
+                <div class="dss__result__buttons">
+                    <form action="" method="get">
+                        {% csrf_token %}
+                        <input class="dss__buttons__submit" id="generate" type="submit" value="Generate PDF">
+                    </form>
+                    {% load static %}
+                    {% if covid == 0 %}
+                    <div style="width:500px;margin:auto;text-align:center;padding-top: 50px">
+                        <img src={% static 'directories/images/virus_icon_caution.png' %}></img>
+                        <p>This patient is projected to contract COVID-19. (Caution is still advised)</p>
+                    </div>
+                    {% elif covid == 1 or covid == 2 %}
+                    <div style="width:500px;margin:auto;text-align:center;padding-top: 50px">
+                        <img src={% static 'directories/images/virus_icon.png' %}></img>
+                        <p>This patient is projected to not contract COVID-19. (Caution is still advised)</p>
+                    </div>
+                    {% endif %}
+                    
+                    {% if intubate == 0 %}
+                    <div style="width:500px;margin:auto;text-align:center;padding-top: 50px">
+                        <img src={% static 'directories/images/intube_icon_caution.png' %}></img>
+                        <p>This patient might need to be intubated.</p>
+                    </div>
+                    {% elif intubate == 1 or intubate == 2 %}
+                    <div style="width:500px;margin:auto;text-align:center;padding-top: 50px">
+                        <img src={% static 'directories/images/intube_icon.png' %}></img>
+                        <p>This patient might not need intubation.</p>
+                    </div>
+                    {% endif %}
+
+                    {% if icu == 0 %}
+                    <div style="width:500px;margin:auto;text-align:center;padding-top: 50px">
+                        <img src={% static 'directories/images/icu_icon_caution.png' %}></img>
+                        <p>This patient might need to be admitted into the ICU.</p>
+                    </div>
+                    {% elif icu == 1 or icu == 2%}
+                    <div style="width:500px;margin:auto;text-align:center;padding-top: 50px">
+                        <img src={% static 'directories/images/icu_icon.png' %}></img>
+                        <p>This patient might not need to be admitted to the ICU.</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>   
+        </div>
+    </div>
+{% endblock content %}
