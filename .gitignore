@@ -4,3 +4,4 @@ covid/__pycache__
 covid/model.sav
 django_project/__pycache__
 settings.py
+secret_settings.py
